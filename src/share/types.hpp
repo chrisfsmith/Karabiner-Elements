@@ -116,6 +116,10 @@ enum class key_code : uint32_t {
   vk_none,
   vk_fn_modifier,
   vk_hyper_modifier,
+  vk_hyper_minus_cmd_modifier,
+  vk_hyper_minus_opt_modifier,
+  vk_hyper_minus_shift_modifier,
+  vk_hyper_minus_ctrl_modifier,
 
   // virtual key codes
   vk_consumer_brightness_down,
@@ -193,7 +197,13 @@ enum class modifier_flag : uint32_t {
   right_option,
   right_command,
   fn,
-  hyper,
+
+  hyper, // cmd + opt + ctrl + shift
+  hyper_minus_cmd, // opt + ctrl + shift
+  hyper_minus_opt, // cmd + ctrl + shift
+  hyper_minus_shift, // cmd + opt + ctrl
+  hyper_minus_ctrl, // cmd + opt + shift
+
   prepared_modifier_flag_end_
 };
 
@@ -255,6 +265,14 @@ public:
       return modifier_flag::fn;
     case static_cast<uint32_t>(key_code::vk_hyper_modifier):
       return modifier_flag::hyper;
+    case static_cast<uint32_t>(key_code::vk_hyper_minus_cmd_modifier):
+      return modifier_flag::hyper_minus_cmd;
+    case static_cast<uint32_t>(key_code::vk_hyper_minus_opt_modifier):
+      return modifier_flag::hyper_minus_opt;
+    case static_cast<uint32_t>(key_code::vk_hyper_minus_shift_modifier):
+      return modifier_flag::hyper_minus_shift;
+    case static_cast<uint32_t>(key_code::vk_hyper_minus_ctrl_modifier):
+      return modifier_flag::hyper_minus_ctrl;
     default:
       return modifier_flag::zero;
     }
@@ -452,6 +470,11 @@ public:
           {"fn", key_code::vk_fn_modifier},
           {"vk_none", key_code::vk_none},
           {"hyper", key_code::vk_hyper_modifier}, // equals to ctrl + option + cmd + shift
+          {"hyper_minus_cmd", key_code::vk_hyper_minus_cmd_modifier}, // equals to ctrl + option + shift
+          {"hyper_minus_opt", key_code::vk_hyper_minus_opt_modifier}, // equals to ctrl + cmd + shift
+          {"hyper_minus_shift", key_code::vk_hyper_minus_shift_modifier}, // equals to ctrl + option + cmd
+          {"hyper_minus_ctrl", key_code::vk_hyper_minus_ctrl_modifier}, // equals to option + cmd + shift
+
           {"vk_consumer_brightness_down", key_code::vk_consumer_brightness_down},
           {"vk_consumer_brightness_up", key_code::vk_consumer_brightness_up},
           {"vk_consumer_illumination_down", key_code::vk_consumer_illumination_down},
@@ -693,6 +716,10 @@ public:
 
       map[key_code::vk_fn_modifier] = 0x3f;
       map[key_code::vk_hyper_modifier] = 0x84;
+      map[key_code::vk_hyper_minus_cmd_modifier] = 0x85;
+      map[key_code::vk_hyper_minus_opt_modifier] = 0x86;
+      map[key_code::vk_hyper_minus_shift_modifier] = 0x87;
+      map[key_code::vk_hyper_minus_ctrl_modifier] = 0x88;
       map[key_code::vk_dashboard] = 0x82;
       map[key_code::vk_launchpad] = 0x83;
       map[key_code::vk_mission_control] = 0xa0;

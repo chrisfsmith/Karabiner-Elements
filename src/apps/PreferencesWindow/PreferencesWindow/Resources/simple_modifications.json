@@ -487,4 +487,16 @@
 }, {
     "name": "hyper",
     "label": "hyper (equal to `control` + `option` + `command` + `shift`)"
+}, {
+    "name": "hyper_minus_cmd",
+    "label": "hyper minus command (equal to `control` + `option` + `shift`)"
+}, {
+    "name": "hyper_minus_opt",
+    "label": "hyper minus option (equal to `control` + `command` + `shift`)"
+}, {
+    "name": "hyper_minus_shift",
+    "label": "hyper minus shift (equal to `control` + `option` + `command`)"
+}, {
+    "name": "hyper_minus_ctrl",
+    "label": "hyper minus control (equal to `option` + `command` + `shift`)"
 }]
