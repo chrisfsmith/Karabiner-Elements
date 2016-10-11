@@ -121,7 +121,7 @@ public:
       bits |= (0x1 << 7);
     }
     if (pressed(krbn::modifier_flag::hyper)) {
-      bits |= (0x1 << 0) | (0x1 << 2) | (0x1 << 3);
+      bits |= (0x1 << 0) | (0x1 << 2) | (0x1 << 3) | (0x1 << 1);
     }
 
     return bits;
@@ -159,7 +159,7 @@ public:
       bits |= NX_COMMANDMASK | NX_DEVICERCMDKEYMASK;
     }
     if (pressed(krbn::modifier_flag::hyper)) {
-      bits |= NX_CONTROLMASK | NX_ALTERNATEMASK | NX_COMMANDMASK;
+      bits |= NX_CONTROLMASK | NX_ALTERNATEMASK | NX_COMMANDMASK | NX_SHIFTMASK;
     }
     if (pressed(krbn::modifier_flag::fn)) {
       bits |= NX_SECONDARYFNMASK;
