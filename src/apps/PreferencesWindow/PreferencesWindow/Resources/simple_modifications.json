@@ -484,4 +484,7 @@
 }, {
     "name": "right_gui",
     "label": "right_gui (equal to `right_command`)"
+}, {
+    "name": "hyper",
+    "label": "hyper (equal to `control` + `option` + `command` + `shift`)"
 }]
